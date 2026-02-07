@@ -7,13 +7,13 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { useDrawingArea } from '@mui/x-charts/hooks';
 import { styled } from '@mui/material/styles';
+import { content } from '../context/DataApi';
 
-///////////////////////////////////////nad
+
 const StyledText = styled('text')(({ theme }) => ({
   fill: theme.palette.text.primary,
   textAnchor: 'middle',
   dominantBaseline: 'central',
-  // fontSize: 18,
   fontSize: 15,
   fontWeight: 600,
   
@@ -31,20 +31,18 @@ function PieCenterLabel({ children }) {
 
 
 export default function TasksPieChart() {
-  const [tasks, setTasks] = React.useState([]);
+  const [task, setTask] = React.useState([]);
   const [view, setView] = React.useState('status');
+  let {tasks}= React.useContext(content)
+ 
 
 
   React.useEffect(() => {
-    fetch('http://localhost:3001/tasks')
-      .then(res => res.json())
-      .then(data => setTasks(data))
-      .catch(err => console.log(err));
-      
-    }, []);
+      tasks?setTask(tasks):'';
+    }, [tasks]);
     
     //total tasks
-  const totalTasks = tasks.length;
+  const totalTasks = task.length;
   
   //  Colors  for status
   const statusColors = {
@@ -63,7 +61,7 @@ export default function TasksPieChart() {
   };
 
   const statusData = Object.values(
-    tasks.reduce((acc, task) => {
+    task.reduce((acc, task) => {
       acc[task.status] = acc[task.status] || {
         id: task.status,
         label: task.status,
@@ -80,7 +78,7 @@ export default function TasksPieChart() {
   }));
 
   const departmentData = Object.values(
-    tasks.reduce((acc, task) => {
+    task.reduce((acc, task) => {
       acc[task.department] = acc[task.department] || {
         id: task.department,
         label: task.department,

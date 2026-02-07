@@ -14,33 +14,19 @@ export  const content=createContext(0)
 
 
   useEffect(()=>{
-    fetch('http://localhost:3001/employees')
+    fetch('https://697e45d397386252a26a4f86.mockapi.io/data')
     .then((res)=>res.json()
     )
-    .then((res)=>setEmpolyees(res)
+    .then((res)=>{
+      setEmpolyees(res[0].employees);
+      setClient(res[0].clients);
+      setProjects(res[0].projects)
+      setTasks(res[0].tasks)
+    }
     ).catch((err)=>console.log(err)
     )
 
-    fetch('http://localhost:3001/clients')
-    .then((res)=>res.json()
-    )
-    .then((res)=>setClient(res)
-    ).catch((err)=>console.log(err)
-    )
-
-    fetch('http://localhost:3001/projects')
-    .then((res)=>res.json()
-    )
-    .then((res)=>setProjects(res)
-    ).catch((err)=>console.log(err)
-    )
-
-    fetch('http://localhost:3001/tasks')
-    .then((res)=>res.json()
-    )
-    .then((res)=>setTasks(res)
-    ).catch((err)=>console.log(err)
-    )
+   
   },[])
   
   return <content.Provider value={{employees,client,projects,tasks,project,setProject,setValueTask,valueTask,color,setColor}}>

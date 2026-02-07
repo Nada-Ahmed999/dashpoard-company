@@ -6,8 +6,7 @@ import "@fortawesome/react-fontawesome";
 import BarChart from "./barchart/BarChart.jsx";
 import Department from "./department/Department.jsx";
 import Pie from "./piechart/PieChart.jsx";
-import DataApi from "./context/dataApi.jsx";
-
+import DataApi from "./context/DataApi.jsx";
 function App() {
   return (
     <>

@@ -1,6 +1,6 @@
 import { PieChart } from '@mui/x-charts/PieChart';
 import { useContext, useEffect, useState } from 'react';
-import { content } from '../context/dataApi.jsx';
+import { content } from '../context/DataApi';
 
 
 export default function Department() {

@@ -9,7 +9,8 @@ import {
   faUsers,
   faUserTie,
 } from "@fortawesome/free-solid-svg-icons";
-import { content } from "../context/dataApi.jsx";
+import { content } from "../context/DataApi";
+
 
 export default function kpi() {
   let { employees, client, projects, tasks } = useContext(content);

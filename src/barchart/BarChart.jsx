@@ -4,9 +4,7 @@
 // import { dataset, valueFormatter } from './Dataset.jsx';
 import { valueFormatter } from './Dataset.jsx';
 import { useContext, useEffect, useState } from 'react';
-import { content } from '../context/dataApi.jsx';
-
-
+import {content} from '../context/DataApi.jsx'
 
 const chartSetting = {
   xAxis: [{ label: 'Number of tasks per month'}],
