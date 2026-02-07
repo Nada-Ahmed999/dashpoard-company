@@ -12,7 +12,7 @@ import {
 import { content } from "../context/DataApi";
 
 
-export default function kpi() {
+export default function Kpi() {
   let { employees, client, projects, tasks } = useContext(content);
   
 
