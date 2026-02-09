@@ -101,7 +101,7 @@ return <>
     <Box sx={{ width: '100%' ,fontSize:'12px',fontWeight:'bold'}}>
       <PieChart
         height={300}
-        width={`${width<992?250:300}`}
+        width={300}
         series={[
           {
             data: mobileAndDesktopOS.slice(0, itemNb),
@@ -113,7 +113,7 @@ return <>
           },
         ]}
         skipAnimation={skipAnimation}
-        sx={{fontSize:'11px'}}
+        sx={{fontSize:'12px',display:'flex',flexDirection:'row-reverse'}}
       />
       
     </Box>

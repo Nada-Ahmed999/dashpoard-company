@@ -8,16 +8,18 @@ import Department from "./department/Department.jsx";
 import Pie from "./piechart/PieChart.jsx";
 import DataApi from "./context/DataApi.jsx";
 import Kpi from "./kpi/Kpi.jsx"
+import { useState } from "react";
 
 
 function App() {
+  let[width,setWidth]=useState(window.innerWidth);
   return (
     <>
     {/* provider context */}
       <DataApi>
         {/* review on company by nada-ahmed*/}
         <div className="  " style={{ backgroundColor: "#efefef" }}>
-          <h1 className="text-secondary ms-5 p-3 ps-5 ">
+          <h1 className="text-secondary ms-3 p-3 ps-5 " style={{fontSize:`${width<992?'17px':''}`}}>
             Company Overview Dashboard
           </h1>
           <div className="container bg-light  rounded-3 ">
