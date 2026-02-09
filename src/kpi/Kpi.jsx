@@ -12,7 +12,7 @@ import {
 import { content } from "../context/DataApi";
 
 
-export default function kpi() {
+export default function Kpi() {
   let { employees, client, projects, tasks } = useContext(content);
   
 
@@ -63,7 +63,7 @@ export default function kpi() {
 
   return (
     <>
-      <div className="d-flex justify-content-around bg-light container-lg ">
+      <div className="d-lg-flex justify-content-around bg-light container-lg  ">
         {partment.map((part, index) => {
           return (
             <div

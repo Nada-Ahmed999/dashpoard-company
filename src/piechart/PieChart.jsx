@@ -11,7 +11,7 @@ export default function PieChart() {
 
  
   return <>
-  <div className='d-flex  mt-5 text-light text-center justify-content-around'>
+  <div className='d-lg-flex  mt-5 text-light text-center justify-content-around'>
     <div>
       <DepartmentEmp  header={'Employees by Department'}/>
     </div>

@@ -96,7 +96,7 @@ return <>
 <DataEmployees  mydata={setdesktopOs}/>
 
   <div className='mt-5'>
-    <h3 className='pb-5 text-secondary  text-start mb-5'>{header}</h3>  
+    <h3 className='pb-5 text-secondary  text-start mb-5 ps-5'>{header}</h3>  
     <Box sx={{ width: '100%' ,fontSize:'12px',fontWeight:'bold'}}>
       <PieChart
         height={300}

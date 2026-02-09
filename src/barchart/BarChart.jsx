@@ -18,6 +18,9 @@ export default function BarCharts() {
   //project from click department
  let {project,tasks,color}=useContext(content);
  let [datatask,setDataTask]=useState(null)
+ let [width,setWidth]=useState(window.innerWidth);
+
+ 
 
    
         
@@ -33,9 +36,7 @@ export default function BarCharts() {
   const month = date.toLocaleString("en-US", { month: "short" });
   
   acc[month] = (acc[month] || 0) + 1;
-  // console.log("acc",acc); 
-  // console.log("month",month); 
-  // console.log("date",acc[month]); 
+   
   
   // x= all task for object in month
   return acc;
@@ -46,8 +47,6 @@ export default function BarCharts() {
  x?Object.keys(x).map((e)=>{
    //task in month
    set=[...set,e]
-    //  console.log(x);
-    //  console.log(e);
      
    set.length ==1? dataset=[] :''
    
@@ -58,11 +57,11 @@ export default function BarCharts() {
   setDataTask(dataset)
   
    },[project])
- 
 
+   
 
   return <>
-  <div className='w-50 mt-4'>
+  <div className={`mt-4 ${width<992?'w-100':'w-50'}`}   >
   <h5 className='ms-4 mt-5 text-secondary'>Tasks by project in the department</h5>
     <BarChart
       dataset={datatask||[]}
